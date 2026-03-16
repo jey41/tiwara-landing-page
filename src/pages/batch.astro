@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BatchResultView from '../components/BatchResult.jsx';
+
+// Batch Analysis Colors
+const themeColors = {
+  'color-primary-val': '#0B3D2E', // Forest Green
+  'color-forest-val': '#0B3D2E', // Forest Green
+  'color-secondary-val': '#20B2AA', // Scientific Teal
+  'color-bg-light-val': '#FDFBF7',
+  'color-bg-dark-val': '#0B3D2E',
+};
+---
+
+<Layout title="TIWARA | Batch Analysis TWR-2026-B1" themeColors={themeColors}>
+	<BatchResultView client:load />
+</Layout>

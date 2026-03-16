@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProductGalleryView from '../components/ProductGallery.jsx';
+
+// Product Gallery Colors
+const themeColors = {
+  'color-primary-val': '#0B3D2E', // Forest Green
+  'color-forest-val': '#0B3D2E', // Forest Green
+  'color-secondary-val': '#ec5b13', // Orange accent
+  'color-bg-light-val': '#FDFBF7',
+  'color-bg-dark-val': '#0B3D2E',
+};
+---
+
+<Layout title="TIWARA | Product Gallery" themeColors={themeColors}>
+	<ProductGalleryView client:load />
+</Layout>

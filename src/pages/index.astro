@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Home from '../components/Home.jsx';
+
+// Home Screen Colors
+const themeColors = {
+  'color-primary-val': '#800020',
+  'color-forest-val': '#0B3D2E',
+  'color-cream-val': '#FFFFFF',
+  'color-bg-light-val': '#FFFFFF',
+  'color-bg-dark-val': '#0B3D2E',
+};
+---
+
+<Layout title="TIWARA - Sang Kesatria Bawang dari Jantung Borneo" themeColors={themeColors}>
+	<Home client:load />
+</Layout>
