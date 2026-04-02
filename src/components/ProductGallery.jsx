@@ -92,96 +92,152 @@ const usageIdeas = [
 ];
 
 export default function ProductGallery() {
+  const [activeImageId, setActiveImageId] = useState(galleryItems[0].id);
+
+  const activeImage = galleryItems.find((item) => item.id === activeImageId) || galleryItems[0];
+
   return (
-    <main className="overflow-hidden bg-white text-slate-900">
-      <section className="relative bg-white pt-24 pb-32 overflow-hidden">
-        {/* Futuristic tech streams in the background */}
-        <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 opacity-20 pointer-events-none">
-          <svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 300 Q 200 100, 400 300 T 800 300" stroke="currentColor" className="text-forest" strokeWidth="2" strokeDasharray="5 5" fill="none" />
-            <path d="M0 350 Q 200 500, 400 350 T 800 350" stroke="currentColor" className="text-primary" strokeWidth="1" strokeDasharray="2 4" fill="none" />
-            <circle cx="200" cy="200" r="4" fill="currentColor" className="text-forest" />
-            <circle cx="600" cy="400" r="6" fill="currentColor" className="text-primary" />
-            <circle cx="500" cy="200" r="60" stroke="currentColor" className="text-forest" strokeWidth="1" strokeDasharray="4 4" fill="none" />
-          </svg>
-        </div>
-        
-        <div className="relative mx-auto max-w-[1280px] px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left Content */}
-            <div className="max-w-2xl">
-              <div className="flex items-center gap-3 mb-8">
-                <span className="w-2.5 h-2.5 rounded-full bg-forest"></span>
-                <span className="text-forest text-sm font-bold tracking-[0.15em] uppercase">
-                  Puncak Inovasi Herbal Borneo
-                </span>
-              </div>
-              
-              <h1 className="text-5xl lg:text-[4.5rem] font-sans font-bold text-slate-900 leading-[1.05] tracking-tight mb-6">
-                Sang Kesatria<br />Bawang dari<br />Jantung Borneo
-              </h1>
-              
-              <p className="text-lg lg:text-xl text-slate-600 leading-relaxed mb-10 max-w-xl">
-                Inovasi fungsional dari bumbu tradisional Borneo, dirancang secara presisi oleh sains untuk kesehatan yang dioptimalkan.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="#produk" className="inline-flex items-center justify-center px-9 py-4 rounded-[1rem] bg-primary text-white font-bold text-lg hover:bg-primary/90 hover:-translate-y-0.5 transition-all shadow-lg shadow-primary/20">
-                  Jelajahi Produk
-                </a>
-                <a href="/traceability" className="inline-flex items-center justify-center px-9 py-4 rounded-[1rem] border-2 border-primary text-primary font-bold text-lg hover:bg-primary/5 transition-colors">
-                  Cek Bukti Ilmiah
-                </a>
-              </div>
-            </div>
-            
-            {/* Right Content */}
-            <div className="relative flex flex-col items-center">
-              {/* Decorative elements */}
-              <div className="absolute top-[20%] -left-8 flex items-center justify-center w-14 h-14 rounded-2xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-slate-100 z-10 hidden sm:flex">
-                 <span className="material-symbols-outlined text-forest text-2xl">link</span>
-              </div>
-              <div className="absolute bottom-[25%] -right-12 w-28 opacity-40 pointer-events-none z-10 hidden sm:block">
-                 <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" className="text-forest" strokeWidth="1">
-                   <path d="M30,80 Q20,60 30,40 Q50,20 70,30 Q90,50 80,70 Q60,90 30,80 Z" strokeLinejoin="round"/>
-                   <circle cx="65" cy="55" r="4" fill="currentColor"/>
-                 </svg>
-              </div>
+    <main className="overflow-hidden bg-background-light text-slate-900">
+      <section className="relative isolate border-b border-primary/10 bg-mesh">
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-primary/10 to-transparent"></div>
+        <div className="absolute -left-24 top-24 h-72 w-72 rounded-full bg-primary/10 blur-3xl"></div>
+        <div className="absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-secondary/15 blur-3xl"></div>
 
-              {/* Main Product Image */}
-              <div className="relative w-full max-w-[400px] mx-auto flex justify-center items-end py-16">
-                {/* Glowing pedestal effect */}
-                <div className="absolute bottom-12 w-3/4 h-8 bg-slate-200/60 blur-xl rounded-[100%] shadow-[0_20px_50px_rgba(0,0,0,0.15)]"></div>
-                {/* 3D Pouch Presentation */}
-                <img 
-                  src={galleryItems[0].src} 
-                  alt="Tiwara Premium Pouch" 
-                  className="relative z-10 w-full object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-
-              {/* Testimonial Integration */}
-              <div className="mt-2 text-center max-w-sm mx-auto relative z-20">
-                <p className="text-slate-500 italic mb-4 font-medium">"Kualitas farmasi dengan jiwa kearifan lokal Kalimantan Timur."</p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <div className="flex gap-1 opacity-40">
-                     <span className="material-symbols-outlined text-slate-800 text-lg">star</span>
-                     <span className="material-symbols-outlined text-slate-800 text-lg">star</span>
-                     <span className="material-symbols-outlined text-slate-800 text-lg">star</span>
-                     <span className="material-symbols-outlined text-slate-800 text-lg">star</span>
-                     <span className="material-symbols-outlined text-slate-800 text-lg">star_outline</span>
+        <div className="relative mx-auto max-w-7xl px-6 pb-20 pt-10 md:pt-14 lg:pb-24">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+            <div className="space-y-5">
+              <div className="rounded-[2rem] border border-primary/10 bg-white/80 p-4 shadow-2xl shadow-primary/10 backdrop-blur-sm">
+                <div className="relative overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-primary via-primary to-secondary p-6 text-white md:p-8">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.26),_transparent_42%),radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.18),_transparent_34%)]"></div>
+                  <div className="relative flex items-start justify-between gap-4">
+                    <div className="inline-flex items-center gap-2 rounded-full bg-white/14 px-4 py-2 text-[11px] font-black uppercase tracking-[0.3em] backdrop-blur-sm">
+                      <span className="material-symbols-outlined text-base">workspace_premium</span>
+                      Bubuk Unggulan
+                    </div>
+                    <div className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.24em] text-white/80">
+                      Fokus Tunggal
+                    </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-[11px] font-bold tracking-widest text-slate-800 uppercase px-3 sm:border-l border-slate-200">
-                      Testimonial Pengguna
-                    </span>
-                    <span className="px-2 py-1 bg-forest/10 text-forest text-[10px] font-black tracking-widest rounded-md uppercase whitespace-nowrap">
-                      Certified Pure
-                    </span>
+
+                  <div className="relative mt-6 overflow-hidden rounded-[1.5rem] border border-white/15 bg-white/8 shadow-2xl shadow-black/15">
+                    <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-primary/70 to-transparent"></div>
+                    <img
+                      alt={activeImage.alt}
+                      className="aspect-[4/4.8] w-full object-cover object-center"
+                      src={activeImage.src}
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 flex flex-wrap items-center gap-3 px-5 py-5 text-xs font-semibold text-white/90 md:px-6">
+                      <span className="rounded-full bg-white/14 px-3 py-1 backdrop-blur-sm">Bubuk Premium</span>
+                      <span className="rounded-full bg-white/14 px-3 py-1 backdrop-blur-sm">Asal Kalimantan Timur</span>
+                      <span className="rounded-full bg-white/14 px-3 py-1 backdrop-blur-sm">Siap untuk rutinitas harian</span>
+                    </div>
                   </div>
                 </div>
               </div>
-              
+
+              <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+                {galleryItems.map((item) => {
+                  const isActive = item.id === activeImage.id;
+
+                  return (
+                    <button
+                      key={item.id}
+                      className={`group overflow-hidden rounded-[1.4rem] border text-left transition-all ${
+                        isActive
+                          ? 'border-primary bg-white shadow-lg shadow-primary/10'
+                          : 'border-primary/10 bg-white/70 hover:border-primary/30 hover:bg-white'
+                      }`}
+                      onClick={() => setActiveImageId(item.id)}
+                      type="button"
+                    >
+                      <div className="relative aspect-[4/3] overflow-hidden">
+                        <img
+                          alt={item.alt}
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          src={item.src}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-transparent to-transparent"></div>
+                        <div className="absolute left-3 top-3 rounded-full bg-white/85 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-primary">
+                          {item.label}
+                        </div>
+                      </div>
+                      <div className="space-y-1 px-4 py-4">
+                        <p className="text-sm font-bold text-slate-900">{item.title}</p>
+                        <p className="text-xs leading-relaxed text-slate-500">{item.description}</p>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white/80 px-4 py-2 text-[11px] font-black uppercase tracking-[0.28em] text-primary shadow-sm">
+                <span className="material-symbols-outlined text-base">grain</span>
+                Fokus pada satu produk utama
+              </div>
+
+              <h1 className="mt-6 max-w-xl text-4xl font-black leading-[1.05] tracking-tight text-forest md:text-6xl">
+                Bubuk Bawang Tiwai untuk rutinitas harian yang lebih ringkas dan terasa premium.
+              </h1>
+
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-600 md:text-xl">
+                Halaman ini sepenuhnya menyorot satu produk agar pengguna langsung memahami bentuk produk, manfaat utamanya, dan langkah pembelian tanpa terdistraksi elemen katalog.
+              </p>
+
+              <div className="mt-8 rounded-[1.75rem] border border-primary/10 bg-white/85 p-6 shadow-xl shadow-primary/5 backdrop-blur-sm">
+                <div className="flex flex-col gap-6 border-b border-slate-200 pb-6 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <p className="text-xs font-black uppercase tracking-[0.3em] text-slate-500">Harga Produk</p>
+                    <p className="mt-3 text-4xl font-black tracking-tight text-primary">Rp 85.000</p>
+                    <p className="mt-2 text-sm text-slate-500">Bubuk murni siap saji untuk kebutuhan konsumsi dan penggunaan sehari-hari.</p>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3 text-sm text-slate-600 sm:max-w-[220px]">
+                    <div>
+                      <p className="text-[11px] font-black uppercase tracking-[0.24em] text-slate-400">Netto</p>
+                      <p className="mt-1 font-semibold text-slate-900">100 g</p>
+                    </div>
+                    <div>
+                      <p className="text-[11px] font-black uppercase tracking-[0.24em] text-slate-400">Format</p>
+                      <p className="mt-1 font-semibold text-slate-900">Bubuk</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {productFacts.map((fact) => (
+                    <div key={fact} className="flex items-start gap-3 rounded-2xl bg-primary/5 px-4 py-4">
+                      <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/20">
+                        <span className="material-symbols-outlined text-[18px]">done</span>
+                      </div>
+                      <p className="text-sm leading-relaxed text-slate-700">{fact}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                  <a
+                    className="inline-flex h-14 items-center justify-center gap-2 rounded-2xl bg-secondary px-7 text-sm font-black uppercase tracking-[0.2em] text-white shadow-xl shadow-secondary/25 transition-all hover:-translate-y-1 hover:brightness-105"
+                    href="#"
+                  >
+                    <span className="material-symbols-outlined">shopping_bag</span>
+                    Beli di Shopee
+                  </a>
+                  <a
+                    className="inline-flex h-14 items-center justify-center gap-2 rounded-2xl border border-primary/15 bg-white px-7 text-sm font-black uppercase tracking-[0.2em] text-primary transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:text-white"
+                    href="#"
+                  >
+                    <span className="material-symbols-outlined">chat</span>
+                    Konsultasi via WhatsApp
+                  </a>
+                </div>
+
+                <div className="mt-5 flex flex-wrap gap-3 text-xs font-bold uppercase tracking-[0.22em] text-slate-500">
+                  <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-2">Produk utama tunggal</span>
+                  <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-2">Visual fokus</span>
+                  <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-2">CTA langsung</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

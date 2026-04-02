@@ -4,57 +4,94 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-12 pb-24 px-6 bg-mesh">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8 order-2 lg:order-1 relative z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-forest/5 dark:bg-cream/5 border border-forest/10 dark:border-cream/10 text-forest dark:text-cream text-xs font-bold uppercase tracking-widest shadow-sm backdrop-blur-sm transition-transform hover:scale-105 cursor-default">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-              Puncak Inovasi Herbal Borneo
-            </div>
-            <h1 className="text-5xl md:text-7xl font-black leading-[1.1] text-forest dark:text-cream tracking-tight">
-              Sang Kesatria Bawang dari <span className="text-primary inline-block drop-shadow-sm">Jantung Borneo</span>
-            </h1>
-            <p className="text-lg md:text-xl text-forest/80 dark:text-cream/80 max-w-xl leading-relaxed font-medium">
-              Bukan sekadar bumbu dapur. Kekuatan alami Borneo yang diproses dengan presisi ilmiah untuk kesehatan optimal Anda.
-            </p>
-            <div className="flex flex-wrap gap-4 pt-4">
-              <a href="/products" className="px-8 py-4 bg-primary text-white rounded-xl font-bold hover:-translate-y-1 transition-all shadow-lg shadow-primary/40 active:scale-95 flex items-center gap-2 group">
-                Jelajahi Produk
-                <span className="material-symbols-outlined text-[20px] transition-transform group-hover:translate-x-1">arrow_forward</span>
-              </a>
-              <a href="/traceability" className="px-8 py-4 border-2 border-forest/80 dark:border-cream/80 text-forest dark:text-cream rounded-xl font-bold hover:bg-forest hover:text-white dark:hover:bg-cream dark:hover:text-forest transition-all hover:shadow-xl hover:-translate-y-1 active:scale-95">
-                Cek Bukti Ilmiah
-              </a>
-            </div>
-          </div>
-          <div className="relative order-1 lg:order-2 group">
-            {/* Ambient Background Glow */}
-            <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full scale-75 group-hover:scale-100 transition-transform duration-1000"></div>
-            
-            <div className="relative aspect-square rounded-[2.5rem] overflow-hidden shadow-2xl rotate-3 group-hover:rotate-0 transition-transform duration-700 ease-out bg-forest border-4 border-cream dark:border-forest/50">
-              <img 
-                alt="Premium red garlic supplement bottle in lush forest" 
-                className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-1000 ease-out" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA95ErVfZFD2Wh2xrTgx10TCA8bbkPdnxgir44R_d_gBQRu9DwKy9lx9nfgy3Pbaws_1av1fQBFaaOlIm_HRQzLMoIv2EayTjdZUe3OKu_eTwQ44VOuNqax63Jwx92WHj9SpQO4mLDlCSG5qkfX7C0LpEYYQTO7R3M8BLaBZiNaonxeAC46bJyOmWG34DvU6Hs17f6RhmkQfWDmdCLD0rx-corKq_jrWrkupLpda0G9xLG0TPzUvjdytA3B3CYJVQWNsI4wsByGjhg" 
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest/80 via-transparent to-transparent opacity-60"></div>
-            </div>
-            
-            <div className="absolute -bottom-8 -left-8 p-6 bg-cream/95 dark:bg-background-dark/95 backdrop-blur-md border border-forest/10 dark:border-cream/10 rounded-2xl shadow-xl max-w-xs transition-transform duration-500 hover:-translate-y-2 group-hover:scale-105 z-20">
-              <p className="text-sm italic text-forest border-l-2 border-primary pl-3 font-medium dark:text-cream/90">"Kualitas farmasi dengan jiwa kearifan lokal Kalimantan Timur."</p>
-              <div className="mt-4 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div className="flex text-amber-400 drop-shadow-sm">
-                    <span className="material-symbols-outlined text-[16px]">star</span>
-                    <span className="material-symbols-outlined text-[16px]">star</span>
-                    <span className="material-symbols-outlined text-[16px]">star</span>
-                    <span className="material-symbols-outlined text-[16px]">star</span>
-                    <span className="material-symbols-outlined text-[16px]">star</span>
-                  </div>
-                  <span className="text-xs font-bold uppercase tracking-tighter text-forest/70 dark:text-cream/70 mt-0.5">5.0</span>
-                </div>
-                <span className="px-2 py-1 bg-primary/10 text-primary rounded text-[10px] font-black uppercase tracking-widest">Certified Pure</span>
+      <section className="relative bg-white pt-24 pb-32 overflow-hidden">
+        {/* Futuristic tech streams in the background */}
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/3 opacity-20 pointer-events-none">
+          <svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 300 Q 200 100, 400 300 T 800 300" stroke="currentColor" className="text-forest" strokeWidth="2" strokeDasharray="5 5" fill="none" />
+            <path d="M0 350 Q 200 500, 400 350 T 800 350" stroke="currentColor" className="text-primary" strokeWidth="1" strokeDasharray="2 4" fill="none" />
+            <circle cx="200" cy="200" r="4" fill="currentColor" className="text-forest" />
+            <circle cx="600" cy="400" r="6" fill="currentColor" className="text-primary" />
+            <circle cx="500" cy="200" r="60" stroke="currentColor" className="text-forest" strokeWidth="1" strokeDasharray="4 4" fill="none" />
+          </svg>
+        </div>
+        
+        <div className="relative mx-auto max-w-[1280px] px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content */}
+            <div className="max-w-2xl">
+              <div className="flex items-center gap-3 mb-8">
+                <span className="w-2.5 h-2.5 rounded-full bg-forest"></span>
+                <span className="text-forest text-sm font-bold tracking-[0.15em] uppercase">
+                  Puncak Inovasi Herbal Borneo
+                </span>
               </div>
+              
+              <h1 className="text-5xl lg:text-[4.5rem] font-sans font-bold text-slate-900 leading-[1.05] tracking-tight mb-6 mt-0">
+                Sang Kesatria<br />Bawang dari<br />Jantung Borneo
+              </h1>
+              
+              <p className="text-lg lg:text-xl text-slate-600 leading-relaxed mb-10 max-w-xl font-normal">
+                Inovasi fungsional dari bumbu tradisional Borneo, dirancang secara presisi oleh sains untuk kesehatan yang dioptimalkan.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href="/products" className="inline-flex items-center justify-center px-9 py-4 rounded-[1rem] bg-primary text-white font-bold text-lg hover:bg-primary/90 hover:-translate-y-0.5 transition-all shadow-lg shadow-primary/20">
+                  Jelajahi Produk
+                </a>
+                <a href="/traceability" className="inline-flex items-center justify-center px-9 py-4 rounded-[1rem] border-2 border-primary text-primary font-bold text-lg hover:bg-primary/5 transition-colors">
+                  Cek Bukti Ilmiah
+                </a>
+              </div>
+            </div>
+            
+            {/* Right Content */}
+            <div className="relative flex flex-col items-center">
+              {/* Decorative elements */}
+              <div className="absolute top-[20%] -left-8 flex items-center justify-center w-14 h-14 rounded-2xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-slate-100 z-10 hidden sm:flex">
+                 <span className="material-symbols-outlined text-forest text-2xl">link</span>
+              </div>
+              <div className="absolute bottom-[25%] -right-12 w-28 opacity-40 pointer-events-none z-10 hidden sm:block">
+                 <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" className="text-forest" strokeWidth="1">
+                   <path d="M30,80 Q20,60 30,40 Q50,20 70,30 Q90,50 80,70 Q60,90 30,80 Z" strokeLinejoin="round"/>
+                   <circle cx="65" cy="55" r="4" fill="currentColor"/>
+                 </svg>
+              </div>
+
+              {/* Main Product Image */}
+              <div className="relative w-full max-w-[400px] mx-auto flex justify-center items-end py-16">
+                {/* Glowing pedestal effect */}
+                <div className="absolute bottom-12 w-3/4 h-8 bg-slate-200/60 blur-xl rounded-[100%] shadow-[0_20px_50px_rgba(0,0,0,0.15)]"></div>
+                {/* 3D Pouch Presentation */}
+                <img 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiUuDFGJTr81lAKklAzRp1gVcmCpcSgV5ltnm8QJkm9JVIVehTAIuGzIdrPQlvbscK9J8i2vfLnVolQe7osoK4nI9Bhyezymo42J3GMPGMFA7XBt1omPfXscYXIudUxYg5CgSIT5L7EOcJDtkxeEQwXxmy7VyYYV7rozvvwV_nuEo4ioMMJLWra05IYW_jEvj9sE8o4gJ8oO8pu13YApa-Wz9WwIZpocfZZoZMgLc8g0W8HvtIWz94m6ctuNB4lrO-2Oz0OmBpd6k" 
+                  alt="Tiwara Premium Pouch" 
+                  className="relative z-10 w-full object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+
+              {/* Testimonial Integration */}
+              <div className="mt-2 text-center max-w-sm mx-auto relative z-20">
+                <p className="text-slate-500 italic mb-4 font-medium">"Kualitas farmasi dengan jiwa kearifan lokal Kalimantan Timur."</p>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                  <div className="flex gap-1 opacity-40">
+                     <span className="material-symbols-outlined text-slate-800 text-lg">star</span>
+                     <span className="material-symbols-outlined text-slate-800 text-lg">star</span>
+                     <span className="material-symbols-outlined text-slate-800 text-lg">star</span>
+                     <span className="material-symbols-outlined text-slate-800 text-lg">star</span>
+                     <span className="material-symbols-outlined text-slate-800 text-lg">star_outline</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="text-[11px] font-bold tracking-widest text-slate-800 uppercase px-3 sm:border-l border-slate-200">
+                      Testimonial Pengguna
+                    </span>
+                    <span className="px-2 py-1 bg-forest/10 text-forest text-[10px] font-black tracking-widest rounded-md uppercase whitespace-nowrap">
+                      Certified Pure
+                    </span>
+                  </div>
+                </div>
+              </div>
+              
             </div>
           </div>
         </div>
