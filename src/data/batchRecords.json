@@ -1,0 +1,62 @@
+[
+  {
+    "batch_number": "TW-B-260301-A",
+    "product_name": "Bubuk Bawang Tiwai",
+    "production_date": "2026-03-01T08:00:00Z",
+    "antioxidant_level": "78.4 mg GAE/g",
+    "coa_document": "COA-TW-2026-03-001",
+    "lab_test_result": "Passed quality standards. Moisture content < 5%. Pathogen free. Flavonoid levels optimal.",
+    "farmer_name": "Bapak Parno",
+    "farm_location": {
+      "village": "Desa Kerta Mahakam",
+      "district": "Muara Kaman",
+      "city": "Kutai Kartanegara",
+      "province": "Kalimantan Timur",
+      "geotag": {
+        "latitude": -0.4285,
+        "longitude": 116.7902
+      }
+    },
+    "quality_status": "Approved"
+  },
+  {
+    "batch_number": "TW-B-260315-B",
+    "product_name": "Bubuk Bawang Tiwai",
+    "production_date": "2026-03-15T09:30:00Z",
+    "antioxidant_level": "81.2 mg GAE/g",
+    "coa_document": "COA-TW-2026-03-012",
+    "lab_test_result": "Passed premium quality standards. Superior antioxidant yield. Microbial status: Negative.",
+    "farmer_name": "Kelompok Tani Harapan Jaya",
+    "farm_location": {
+      "village": "Desa Jonggon Jaya",
+      "district": "Loa Kulu",
+      "city": "Kutai Kartanegara",
+      "province": "Kalimantan Timur",
+      "geotag": {
+        "latitude": -0.5186,
+        "longitude": 116.9854
+      }
+    },
+    "quality_status": "Approved"
+  },
+  {
+    "batch_number": "TW-B-260401-C",
+    "product_name": "Bubuk Bawang Tiwai",
+    "production_date": "2026-04-01T10:15:00Z",
+    "antioxidant_level": "76.9 mg GAE/g",
+    "coa_document": "COA-TW-2026-04-005",
+    "lab_test_result": "Quality analysis underway. Preliminary tests pass basic moisture standards.",
+    "farmer_name": "Ibu Suryani",
+    "farm_location": {
+      "village": "Desa Sepaku",
+      "district": "Sepaku",
+      "city": "Penajam Paser Utara",
+      "province": "Kalimantan Timur",
+      "geotag": {
+        "latitude": -0.9231,
+        "longitude": 116.8224
+      }
+    },
+    "quality_status": "Pending"
+  }
+]

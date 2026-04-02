@@ -1,6 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+import batchRecords from '../data/batchRecords.json';
+import BatchResult from './BatchResult.jsx';
 
 export default function Traceability() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchedBatch, setSearchedBatch] = useState(null);
+  const [hasSearched, setHasSearched] = useState(false);
+
+  const handleSearch = (e) => {
+    if (e?.preventDefault) e.preventDefault();
+    if (!searchQuery.trim()) return;
+    
+    const found = batchRecords.find(b => b.batch_number.toLowerCase() === searchQuery.trim().toLowerCase());
+    setSearchedBatch(found || null);
+    setHasSearched(true);
+  };
+
   return (
     <>
       <div className="relative flex flex-col min-h-screen w-full overflow-x-hidden">
@@ -25,25 +40,44 @@ export default function Traceability() {
 
             {/* Prominent Search Bar */}
             <div className="mt-12 max-w-2xl mx-auto">
-              <form action="/batch" method="get" className="group relative flex items-center clinical-shadow rounded-2xl overflow-hidden bg-white border-2 border-primary/5 focus-within:border-secondary/50 transition-all duration-300">
+              <form onSubmit={handleSearch} className="group relative flex items-center clinical-shadow rounded-2xl overflow-hidden bg-white border-2 border-primary/5 focus-within:border-secondary/50 transition-all duration-300">
                 <div className="pl-6 text-primary/40 group-focus-within:text-secondary transition-colors">
                   <span className="material-symbols-outlined text-3xl">search</span>
                 </div>
-                <input name="id" className="w-full py-6 px-4 bg-transparent border-none focus:outline-none focus:ring-0 text-xl font-medium placeholder:text-slate-300 :text-slate-600" placeholder="Contoh: TWR-2026-B1" type="text" />
+                <input 
+                  name="id" 
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full py-6 px-4 bg-transparent border-none focus:outline-none focus:ring-0 text-xl font-medium placeholder:text-slate-300 text-slate-600" 
+                  placeholder="Contoh: TW-B-260301-A" 
+                  type="text" 
+                />
                 <div className="pr-3">
                   <button type="submit" className="bg-secondary hover:bg-secondary/90 text-white p-4 rounded-xl transition-all shadow-lg shadow-secondary/20">
                     <span className="material-symbols-outlined">arrow_forward</span>
                   </button>
                 </div>
               </form>
+              
+              {hasSearched && !searchedBatch && (
+                <div className="mt-6 text-red-500 font-bold p-4 bg-red-50 rounded-xl border border-red-100">
+                  Batch number not found.
+                </div>
+              )}
               <div className="mt-4 flex flex-wrap justify-center gap-3">
                 <span className="text-sm text-slate-400">Pencarian Terpopuler:</span>
-                <a href="/batch?id=TWR-SUM-042" className="text-sm font-medium text-primary hover:underline underline-offset-4">TWR-SUM-042</a>
-                <a href="/batch?id=B1-SPECIAL-RES" className="text-sm font-medium text-primary hover:underline underline-offset-4">B1-SPECIAL-RES</a>
+                <button type="button" onClick={() => { setSearchQuery('TW-B-260301-A'); handleSearch({preventDefault:()=>{}}); }} className="text-sm font-medium text-primary hover:underline underline-offset-4">TW-B-260301-A</button>
+                <button type="button" onClick={() => { setSearchQuery('TW-B-260315-B'); handleSearch({preventDefault:()=>{}}); }} className="text-sm font-medium text-primary hover:underline underline-offset-4">TW-B-260315-B</button>
               </div>
             </div>
           </section>
 
+          {searchedBatch ? (
+            <div className="w-full pb-20">
+              <BatchResult record={searchedBatch} />
+            </div>
+          ) : (
+            <>
           {/* Status & Features */}
           <section className="max-w-7xl mx-auto w-full px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-2xl border border-primary/5 clinical-shadow">
@@ -107,6 +141,8 @@ export default function Traceability() {
               </div>
             </div>
           </section>
+          </>
+          )}
         </main>
 
         <footer className="bg-primary py-16 text-white/60">

@@ -1,6 +1,8 @@
 import React from 'react';
 
-export default function BatchResult() {
+export default function BatchResult({ record }) {
+  if (!record) return null;
+
   return (
     <>
       <div className="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
@@ -15,8 +17,8 @@ export default function BatchResult() {
                   <span className="material-symbols-outlined text-sm">verified</span>
                   <span>CERTIFIED QUALITY ASSURANCE</span>
                 </div>
-                <h1 className="text-3xl font-black leading-tight tracking-tight">Batch TWR-2026-B1</h1>
-                <p className="text-slate-500">Analysis Result • Harvested Oct 2023</p>
+                <h1 className="text-3xl font-black leading-tight tracking-tight">Batch {record.batch_number}</h1>
+                <p className="text-slate-500">Analysis Result • Production Date {new Date(record.production_date).toLocaleDateString()}</p>
               </div>
               <div className="flex gap-3">
                 <button className="flex items-center justify-center gap-2 rounded-xl h-11 px-6 bg-slate-900 text-white font-bold transition-all hover:opacity-90">
@@ -34,7 +36,7 @@ export default function BatchResult() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
               {/* Left: Radial Progress Card */}
               <div className="lg:col-span-4 bg-white rounded-xl p-8 border border-slate-200 flex flex-col items-center justify-center text-center shadow-sm">
-                <h3 className="text-lg font-bold mb-6">Flavonoid Content</h3>
+                <h3 className="text-lg font-bold mb-6">Antioxidant Content</h3>
                 <div className="relative size-48 mb-6">
                   {/* SVG Radial Progress */}
                   <svg className="size-full transform -rotate-90" viewBox="0 0 100 100">
@@ -42,11 +44,11 @@ export default function BatchResult() {
                     <circle className="text-scientific-teal" cx="50" cy="50" fill="transparent" r="45" stroke="currentColor" strokeDasharray="282.7" strokeDashoffset="42.4" strokeLinecap="round" strokeWidth="8"></circle>
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <span className="text-4xl font-black text-scientific-teal">85%</span>
-                    <span className="text-xs text-slate-500 uppercase font-bold tracking-widest">High Potency</span>
+                    <span className="text-2xl font-black text-scientific-teal">{record.antioxidant_level ? record.antioxidant_level.split(" ")[0] : ""}</span>
+                    <span className="text-xs text-slate-500 uppercase font-bold tracking-widest">{record.antioxidant_level ? record.antioxidant_level.split(" ").slice(1).join(" ") : "Level"}</span>
                   </div>
                 </div>
-                <p className="text-sm text-slate-500 leading-relaxed">This batch exceeds the standard flavonoid benchmark by 12.5%, indicating superior antioxidant properties.</p>
+                <p className="text-sm text-slate-500 leading-relaxed">{record.lab_test_result}</p>
               </div>
 
               {/* Right: KPI Grid */}
@@ -56,10 +58,10 @@ export default function BatchResult() {
                     <div className="p-2 bg-scientific-teal/10 text-scientific-teal rounded-lg">
                       <span className="material-symbols-outlined">biotech</span>
                     </div>
-                    <span className="text-green-500 text-xs font-bold bg-green-500/10 px-2 py-1 rounded-full">+2.1% Avg</span>
+                    <span className="text-green-500 text-xs font-bold bg-green-500/10 px-2 py-1 rounded-full">{record.quality_status}</span>
                   </div>
-                  <p className="text-slate-500 text-sm font-medium mb-1">Batch Purity</p>
-                  <p className="text-3xl font-bold tracking-tight">99.2%</p>
+                  <p className="text-slate-500 text-sm font-medium mb-1">Quality Status</p>
+                  <p className="text-3xl font-bold tracking-tight">{record.quality_status === 'Approved' ? 'High' : record.quality_status}</p>
                 </div>
                 <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
                   <div className="flex justify-between items-start mb-4">
@@ -102,18 +104,18 @@ export default function BatchResult() {
               <div className="md:w-1/3 h-64 md:h-auto relative">
                 <img alt="Portrait of farmer Pak Aris in his farm" className="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-1CyXuxpsptijLU8Goh2tcOuQn8LAGRNPxwdF-LVdGDiY_zPnXWwp0jEY65IqhCwWBnXYZMT4LH2QLlkqDfs991ImEEwDpj2G36rk_R8mGhk33eloUIoFLPPFKCRDjwxrqa1bkfy9ugl8bQsp-lMJKBMRuJ4ojaVaZSUIS2vtb-pEO__9Ffqpp2vaEtcQ4eQ5ibY1pEYxiloAHdUIX0WD0oY0nmLefi0p9XGDvbJNP2HfClrORfCFF4SQfsyhVcSASX0J3Uajx-4" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
-                  <p className="text-white text-sm font-bold">Pak Aris</p>
+                  <p className="text-white text-sm font-bold">{record.farmer_name}</p>
                   <p className="text-white/80 text-xs">Master Cultivator</p>
                 </div>
               </div>
               <div className="md:w-2/3 p-8 flex flex-col justify-center">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-4 w-fit">
                   <span className="material-symbols-outlined text-sm">location_on</span>
-                  <span>KUTAI KARTANEGARA</span>
+                  <span>{record.farm_location?.city ? record.farm_location.city.toUpperCase() : ''}</span>
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Tumbuh di Lahan Pak Aris</h3>
+                <h3 className="text-2xl font-bold mb-4">Tumbuh di Lahan {record.farmer_name}</h3>
                 <p className="text-slate-600 mb-6 leading-relaxed">
-                  Dipanen dari lereng subur Kutai Kartanegara menggunakan metode regeneratif. Pak Aris telah mengelola lahan ini selama 15 tahun, memastikan keseimbangan tanah tetap optimal untuk menghasilkan konsentrasi flavonoid tertinggi.
+                  Dipanen dari wilayah subur {record.farm_location?.city} menggunakan metode regeneratif. Lokasi di {record.farm_location?.village}, {record.farm_location?.district}, memastikan keseimbangan tanah tetap optimal untuk menghasilkan konsentrasi terbaik.
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex items-center gap-3">
