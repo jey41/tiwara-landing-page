@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Navbar from '../components/Navbar.jsx';
+import FloatingMascot from '../components/FloatingMascot.jsx';
 
 interface Props {
 	title: string;
@@ -28,5 +29,6 @@ const { title, themeColors } = Astro.props;
 		)}
 		<Navbar client:load />
 		<slot />
+		<FloatingMascot client:load />
 	</body>
 </html>

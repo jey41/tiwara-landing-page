@@ -11,12 +11,15 @@ export default function Navbar() {
           </div>
           <h2 className="text-primary text-2xl font-black tracking-tighter uppercase">TIWARA</h2>
         </a>
-        
+
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
           <a className="text-sm font-bold uppercase tracking-widest text-slate-700 hover:text-primary :text-primary transition-colors" href="/">Home</a>
           <a className="text-sm font-bold uppercase tracking-widest text-slate-700 hover:text-primary :text-primary transition-colors" href="/products">Produk</a>
           <a className="text-sm font-bold uppercase tracking-widest text-slate-700 hover:text-primary :text-primary transition-colors" href="/traceability">Traceability</a>
+          <a className="text-sm font-bold uppercase tracking-widest text-slate-700 hover:text-primary transition-colors" href="/daftar-petani">
+            Daftar Petani
+          </a>
         </div>
 
         {/* Mobile menu button */}

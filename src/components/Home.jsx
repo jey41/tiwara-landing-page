@@ -217,6 +217,11 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            <a href="/daftar-petani" className="inline-flex items-center gap-3 px-8 py-4 bg-secondary text-white font-bold rounded-2xl shadow-lg shadow-secondary/20 hover:shadow-xl hover:-translate-y-0.5 transition-all mt-2">
+              <span className="material-symbols-outlined">group_add</span>
+              Bergabung Menjadi Petani Mitra
+            </a>
           </div>
         </div>
       </section>
