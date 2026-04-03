@@ -1,4 +1,5 @@
 import React from 'react';
+import KhmInfographic from './KhmInfographic';
 
 export default function Home() {
   return (
@@ -146,6 +147,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* KHM MRSA Infographic — Bukti Ilmiah */}
+      <KhmInfographic />
 
       {/* Social Impact Section */}
       <section className="py-32 px-6 relative bg-background-light dark:bg-background-dark border-b border-primary/5">

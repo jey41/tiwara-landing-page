@@ -10,6 +10,14 @@ const galleryItems = [
     alt: 'Kemasan Bubuk Bawang Tiwai',
   },
   {
+    id: 'usage',
+    label: 'Penggunaan',
+    title: 'Mudah masuk ke rutinitas harian',
+    description: 'Dirancang untuk pengguna yang mencari format praktis dan mudah dipadukan ke konsumsi sehari-hari.',
+    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA95ErVfZFD2Wh2xrTgx10TCA8bbkPdnxgir44R_d_gBQRu9DwKy9lx9nfgy3Pbaws_1av1fQBFaaOlIm_HRQzLMoIv2EayTjdZUe3OKu_eTwQ44VOuNqax63Jwx92WHj9SpQO4mLDlCSG5qkfX7C0LpEYYQTO7R3M8BLaBZiNaonxeAC46bJyOmWG34DvU6Hs17f6RhmkQfWDmdCLD0rx-corKq_jrWrkupLpda0G9xLG0TPzUvjdytA3B3CYJVQWNsI4wsByGjhg',
+    alt: 'Produk TIWARA dalam konteks gaya hidup premium',
+  },
+  {
     id: 'texture',
     label: 'Bahan Baku',
     title: 'Asal dari Kalimantan Timur',
@@ -24,14 +32,6 @@ const galleryItems = [
     description: 'Kemitraan langsung membantu menjaga rantai pasok tetap pendek, lebih transparan, dan lebih terukur.',
     src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC8kbXu3TLekq7K2V5qsxV9xF0GN3prPSI7NXddYe0Q3seGeoHfrdus6cez1WIXLO3BqvFGka76P7BYFlCpmhEjU9sZoCP3tq208qer2U6k6ixcAYmLrrR_3AA4Nx5ZvJvjQ8nNGyDtPiFr5RNMLNAWpzrL0b7QUOgHBTxAAFnrL1nYfulCG9hNtVL0tzFFGYde4a3Jqd1waOEsHvuSmFGreDoE6VhUcyeUn3rvco82Xi92TkuqGNCj3N3EF-nc9I7WWnGzvFJdOJ0',
     alt: 'Petani mitra TIWARA saat panen',
-  },
-  {
-    id: 'usage',
-    label: 'Penggunaan',
-    title: 'Mudah masuk ke rutinitas harian',
-    description: 'Dirancang untuk pengguna yang mencari format praktis dan mudah dipadukan ke konsumsi sehari-hari.',
-    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA95ErVfZFD2Wh2xrTgx10TCA8bbkPdnxgir44R_d_gBQRu9DwKy9lx9nfgy3Pbaws_1av1fQBFaaOlIm_HRQzLMoIv2EayTjdZUe3OKu_eTwQ44VOuNqax63Jwx92WHj9SpQO4mLDlCSG5qkfX7C0LpEYYQTO7R3M8BLaBZiNaonxeAC46bJyOmWG34DvU6Hs17f6RhmkQfWDmdCLD0rx-corKq_jrWrkupLpda0G9xLG0TPzUvjdytA3B3CYJVQWNsI4wsByGjhg',
-    alt: 'Produk TIWARA dalam konteks gaya hidup premium',
   },
 ];
 
@@ -62,8 +62,8 @@ const benefitCards = [
   },
   {
     icon: 'workspace_premium',
-    title: 'Dikemas untuk tampil unggul',
-    text: 'Setiap elemen halaman mendukung positioning Bubuk Bawang Tiwai sebagai produk utama, bukan bagian dari katalog.',
+    title: 'Dikemas tanpa kompromi',
+    text: 'Murni bubuk bawang tiwai tanpa bahan pengisi, pewarna buatan, atau pengawet kimia — persis seperti asalnya dari Kalimantan Timur.',
   },
 ];
 
@@ -218,24 +218,31 @@ export default function ProductGallery() {
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                   <a
                     className="inline-flex h-14 items-center justify-center gap-2 rounded-2xl bg-secondary px-7 text-sm font-black uppercase tracking-[0.2em] text-white shadow-xl shadow-secondary/25 transition-all hover:-translate-y-1 hover:brightness-105"
-                    href="#"
+                    href="https://shopee.co.id/[SHOPEE_URL]"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <span className="material-symbols-outlined">shopping_bag</span>
                     Beli di Shopee
                   </a>
                   <a
                     className="inline-flex h-14 items-center justify-center gap-2 rounded-2xl border border-primary/15 bg-white px-7 text-sm font-black uppercase tracking-[0.2em] text-primary transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:text-white"
-                    href="#"
+                    href="https://wa.me/62[WA_NUMBER]?text=Halo%20TIWARA%2C%20saya%20ingin%20bertanya%20tentang%20Bubuk%20Bawang%20Tiwai"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <span className="material-symbols-outlined">chat</span>
                     Konsultasi via WhatsApp
                   </a>
+                  <p className="text-xs text-slate-500 text-center mt-3 w-full">
+                    Ragu dulu? Tanya via WhatsApp — tidak ada kewajiban beli.
+                  </p>
                 </div>
 
                 <div className="mt-5 flex flex-wrap gap-3 text-xs font-bold uppercase tracking-[0.22em] text-slate-500">
-                  <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-2">Produk utama tunggal</span>
-                  <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-2">Visual fokus</span>
-                  <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-2">CTA langsung</span>
+                  <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-2">Tanpa Pengawet Kimia</span>
+                  <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-2">Cold-Processed 48 Jam</span>
+                  <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-2">CoA Lab Verified</span>
                 </div>
               </div>
             </div>
@@ -279,7 +286,7 @@ export default function ProductGallery() {
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/10 text-secondary">
                 <span className="material-symbols-outlined text-3xl">nutrition</span>
               </div>
-              <h3 className="mt-6 text-2xl font-black tracking-tight text-forest">Arah komunikasi produk</h3>
+              <h3 className="mt-6 text-2xl font-black tracking-tight text-forest">Mengapa TIWARA memilih satu produk?</h3>
               <p className="mt-4 text-base leading-relaxed text-slate-600">
                 Pesan utama dibuat singkat dan tegas: praktis digunakan, terasa premium, dan tetap membawa identitas TIWARA yang kuat dan terpercaya.
               </p>
@@ -343,10 +350,10 @@ export default function ProductGallery() {
               Jaminan dan Kepercayaan
             </p>
             <h2 className="text-4xl font-black tracking-tight text-forest md:text-5xl">
-              Bukan sekadar tampilan tunggal, tetapi fokus yang terasa lebih terpercaya.
+              Setiap pouch dibuat dengan standar yang sama sejak panen pertama.
             </h2>
             <p className="text-lg leading-relaxed text-slate-600">
-              Dengan menghapus grid multi-produk, seluruh perhatian pengguna diarahkan ke satu keputusan. Ini membuat narasi kualitas, asal-usul, dan manfaat terasa lebih jelas dan lebih kuat.
+              Dari lahan mitra di Kalimantan Timur hingga ke tangan Anda — rantai pasok yang pendek, proses yang terukur, dan hasil yang bisa Anda lacak langsung.
             </p>
 
             <div className="grid gap-4 sm:grid-cols-3">
@@ -355,12 +362,12 @@ export default function ProductGallery() {
                 <p className="mt-2 text-xs font-black uppercase tracking-[0.26em] text-slate-500">Keluarga Mitra</p>
               </div>
               <div className="rounded-[1.75rem] border border-primary/10 bg-white px-6 py-6 shadow-lg shadow-primary/5">
-                <p className="text-3xl font-black text-primary">1</p>
-                <p className="mt-2 text-xs font-black uppercase tracking-[0.26em] text-slate-500">Produk Fokus</p>
+                <p className="text-3xl font-black text-primary">48 Jam</p>
+                <p className="mt-2 text-xs font-black uppercase tracking-[0.26em] text-slate-500">Proses Cold-Extraction</p>
               </div>
               <div className="rounded-[1.75rem] border border-primary/10 bg-white px-6 py-6 shadow-lg shadow-primary/5">
-                <p className="text-3xl font-black text-primary">100 g</p>
-                <p className="mt-2 text-xs font-black uppercase tracking-[0.26em] text-slate-500">Netto Produk</p>
+                <p className="text-3xl font-black text-primary">CoA</p>
+                <p className="mt-2 text-xs font-black uppercase tracking-[0.26em] text-slate-500">Terverifikasi Lab</p>
               </div>
             </div>
           </div>
@@ -385,24 +392,28 @@ export default function ProductGallery() {
             <div>
               <p className="text-xs font-black uppercase tracking-[0.3em] text-white/70">Aksi Penutup</p>
               <h2 className="mt-4 max-w-3xl text-3xl font-black tracking-tight md:text-5xl">
-                Jika yang dibutuhkan adalah satu produk utama yang jelas, Bubuk Bawang Tiwai sudah berada di depan pengguna.
+                Siap untuk rutinitas yang lebih bersih? Bubuk Bawang Tiwai sudah menunggu — langsung dari Kalimantan Timur.
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/75 md:text-lg">
-                Arahkan pengguna langsung ke pembelian atau konsultasi tanpa perlu melewati lapisan navigasi tambahan yang membuat keputusan terasa lebih lambat.
+                Pesan langsung di Shopee atau tanya dulu via WhatsApp — tidak ada kewajiban, tidak ada formulir rumit.
               </p>
             </div>
 
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
               <a
                 className="inline-flex h-14 items-center justify-center gap-2 rounded-2xl bg-secondary px-8 text-sm font-black uppercase tracking-[0.2em] text-white shadow-xl shadow-secondary/30 transition-all hover:-translate-y-1 hover:brightness-105"
-                href="#"
+                href="https://shopee.co.id/[SHOPEE_URL]"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <span className="material-symbols-outlined">shopping_bag</span>
                 Beli di Shopee
               </a>
               <a
                 className="inline-flex h-14 items-center justify-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-8 text-sm font-black uppercase tracking-[0.2em] text-white backdrop-blur-sm transition-all hover:-translate-y-1 hover:bg-white/20"
-                href="#"
+                href="https://wa.me/62[WA_NUMBER]?text=Halo%20TIWARA%2C%20saya%20ingin%20bertanya%20tentang%20Bubuk%20Bawang%20Tiwai"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <span className="material-symbols-outlined">chat</span>
                 Konsultasi via WhatsApp
@@ -422,7 +433,7 @@ export default function ProductGallery() {
               <span className="text-2xl font-black uppercase tracking-tight text-forest">TIWARA</span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-slate-500">
-              Presentasi satu produk untuk Bubuk Bawang Tiwai, dirancang agar halaman terasa fokus, premium, dan mudah ditindaklanjuti.
+              Herbal fungsional dari Kalimantan Timur, dibuat untuk rutinitas harian yang lebih bermakna.
             </p>
           </div>
 
