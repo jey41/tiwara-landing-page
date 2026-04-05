@@ -6,7 +6,7 @@ const galleryItems = [
     label: 'Produk Utama',
     title: 'Kemasan Premium',
     description: 'Tampilan utama Bubuk Bawang Tiwai dengan kemasan bersih dan fokus produk yang tegas.',
-    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBiUuDFGJTr81lAKklAzRp1gVcmCpcSgV5ltnm8QJkm9JVIVehTAIuGzIdrPQlvbscK9J8i2vfLnVolQe7osoK4nI9Bhyezymo42J3GMPGMFA7XBt1omPfXscYXIudUxYg5CgSIT5L7EOcJDtkxeEQwXxmy7VyYYV7rozvvwV_nuEo4ioMMJLWra05IYW_jEvj9sE8o4gJ8oO8pu13YApa-Wz9WwIZpocfZZoZMgLc8g0W8HvtIWz94m6ctuNB4lrO-2Oz0OmBpd6k',
+    src: '/packaging.png',
     alt: 'Kemasan Bubuk Bawang Tiwai',
   },
   {
@@ -14,7 +14,7 @@ const galleryItems = [
     label: 'Penggunaan',
     title: 'Mudah masuk ke rutinitas harian',
     description: 'Dirancang untuk pengguna yang mencari format praktis dan mudah dipadukan ke konsumsi sehari-hari.',
-    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA95ErVfZFD2Wh2xrTgx10TCA8bbkPdnxgir44R_d_gBQRu9DwKy9lx9nfgy3Pbaws_1av1fQBFaaOlIm_HRQzLMoIv2EayTjdZUe3OKu_eTwQ44VOuNqax63Jwx92WHj9SpQO4mLDlCSG5qkfX7C0LpEYYQTO7R3M8BLaBZiNaonxeAC46bJyOmWG34DvU6Hs17f6RhmkQfWDmdCLD0rx-corKq_jrWrkupLpda0G9xLG0TPzUvjdytA3B3CYJVQWNsI4wsByGjhg',
+    src: '/packaging.jpeg',
     alt: 'Produk TIWARA dalam konteks gaya hidup premium',
   },
   {
@@ -427,8 +427,8 @@ export default function ProductGallery() {
         <div className="mx-auto flex max-w-7xl flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div className="max-w-md">
             <div className="flex items-center gap-3 text-primary">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-white shadow-lg shadow-primary/20">
-                <span className="material-symbols-outlined text-2xl">shield_with_heart</span>
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-lg shadow-primary/20 p-1 border border-primary/10">
+                <img src="/logo.png" alt="TIWARA Logo" className="w-full h-full object-contain" />
               </div>
               <span className="text-2xl font-black uppercase tracking-tight text-forest">TIWARA</span>
             </div>

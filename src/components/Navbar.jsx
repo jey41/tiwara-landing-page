@@ -6,8 +6,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-          <div className="w-10 h-10 bg-primary flex items-center justify-center rounded-lg text-white shadow-md shadow-primary/20">
-            <span className="material-symbols-outlined text-2xl">shield_with_heart</span>
+          <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-white/50 shadow-md shadow-primary/20 p-0.5">
+            <img src="/logo.png" alt="TIWARA Logo" className="w-full h-full object-contain" />
           </div>
           <h2 className="text-primary text-2xl font-black tracking-tighter uppercase">TIWARA</h2>
         </a>

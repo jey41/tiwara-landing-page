@@ -65,7 +65,7 @@ export default function Home() {
                 <div className="absolute bottom-12 w-3/4 h-8 bg-slate-200/60 blur-xl rounded-[100%] shadow-[0_20px_50px_rgba(0,0,0,0.15)]"></div>
                 {/* 3D Pouch Presentation */}
                 <img 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiUuDFGJTr81lAKklAzRp1gVcmCpcSgV5ltnm8QJkm9JVIVehTAIuGzIdrPQlvbscK9J8i2vfLnVolQe7osoK4nI9Bhyezymo42J3GMPGMFA7XBt1omPfXscYXIudUxYg5CgSIT5L7EOcJDtkxeEQwXxmy7VyYYV7rozvvwV_nuEo4ioMMJLWra05IYW_jEvj9sE8o4gJ8oO8pu13YApa-Wz9WwIZpocfZZoZMgLc8g0W8HvtIWz94m6ctuNB4lrO-2Oz0OmBpd6k" 
+                  src="/packaging.png" 
                   alt="Tiwara Premium Pouch" 
                   className="relative z-10 w-full object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700"
                 />
@@ -232,8 +232,8 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-12 gap-12 mb-20">
             <div className="col-span-2 md:col-span-4 space-y-6">
               <a href="/" className="inline-flex items-center gap-3 hover:opacity-80 transition-opacity">
-                <div className="w-12 h-12 bg-primary flex items-center justify-center rounded-xl text-white shadow-lg shadow-primary/20">
-                  <span className="material-symbols-outlined text-3xl">shield_with_heart</span>
+                <div className="w-12 h-12 bg-white flex items-center justify-center rounded-xl shadow-lg shadow-primary/20 p-1">
+                  <img src="/logo.png" alt="TIWARA Logo" className="w-full h-full object-contain" />
                 </div>
                 <span className="text-3xl font-black tracking-tighter uppercase">TIWARA</span>
               </a>

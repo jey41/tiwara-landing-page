@@ -45,7 +45,7 @@ const FloatingMascot = () => {
           src="/maskot.png"
           alt="TIWARA Mascot"
           className={`absolute bottom-0 right-0 mr-4 md:mr-8 w-48 h-auto md:w-72 object-contain drop-shadow-2xl transition-all duration-500 origin-bottom ${
-            isOpen ? 'scale-100 opacity-100 translate-y-0 relative' : 'scale-75 opacity-0 translate-y-20 absolute pointer-events-none'
+            isOpen ? 'scale-100 opacity-100 translate-x-0 relative' : 'scale-75 opacity-0 translate-x-full absolute pointer-events-none'
           }`}
         />
 
@@ -54,7 +54,7 @@ const FloatingMascot = () => {
           src="/intip.png"
           alt="TIWARA Peeking"
           className={`bottom-0 right-0 w-32 h-auto md:w-48 object-contain drop-shadow-xl transition-all duration-500 origin-bottom ${
-            !isOpen ? 'scale-100 opacity-100 translate-y-0 relative hover:scale-[1.02]' : 'scale-75 opacity-0 translate-y-20 absolute pointer-events-none'
+            !isOpen ? 'scale-100 opacity-100 translate-x-0 relative hover:scale-[1.02]' : 'scale-75 opacity-0 translate-x-full absolute pointer-events-none'
           }`}
         />
       </div>

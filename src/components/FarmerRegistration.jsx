@@ -496,8 +496,8 @@ export default function FarmerRegistration() {
       <footer className="bg-forest text-cream pt-16 pb-10 px-6 border-t-[6px] border-primary">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <div className="w-10 h-10 bg-primary flex items-center justify-center rounded-xl text-white shadow-lg shadow-primary/20">
-              <span className="material-symbols-outlined text-2xl">shield_with_heart</span>
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white shadow-md shadow-primary/20 p-1 border border-primary/10">
+              <img src="/logo.png" alt="TIWARA Logo" className="w-full h-full object-contain" />
             </div>
             <span className="text-2xl font-black tracking-tighter uppercase">TIWARA</span>
           </a>
